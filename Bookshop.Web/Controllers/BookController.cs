@@ -1,11 +1,10 @@
 ﻿using Bookshop.Domain.Entities;
 using Bookshop.Domain.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
-namespace Bookshop.Web.Conrollers
+namespace Bookshop.Web.Controllers
 {
     [ApiController]
     [Route("api/[controller]/[action]")]
