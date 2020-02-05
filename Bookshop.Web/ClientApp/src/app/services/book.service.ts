@@ -10,6 +10,6 @@ export class BookService {
 
   constructor(private http: HttpClient) { }
   getAllCubes(): Observable<Book[]> {
-    //return this.http.get<Book[]>(`api/Book/GetAllBooks`);
+    return this.http.get<Book[]>(`api/Book/GetAllBooks`);
   }
 }

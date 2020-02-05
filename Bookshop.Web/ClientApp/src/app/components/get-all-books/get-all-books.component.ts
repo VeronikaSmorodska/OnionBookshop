@@ -16,9 +16,8 @@ public books:Book[];
   }
   getAllBooks()
   {
-    debugger;
     this.bookService.getAllCubes().subscribe(books=>{
-      this.books=books;
+      this.books = books;
     })
   }
 }

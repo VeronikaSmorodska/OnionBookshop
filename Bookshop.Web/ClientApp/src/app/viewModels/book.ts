@@ -1,4 +1,4 @@
 export class Book {
-    public BookId:string;
-    public Name:string;
+    public bookId:string;
+    public name:string;
 }
