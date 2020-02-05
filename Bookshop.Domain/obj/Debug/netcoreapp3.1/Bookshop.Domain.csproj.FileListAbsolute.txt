@@ -1,7 +1,6 @@
 C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Domain\bin\Debug\netcoreapp3.1\Bookshop.Domain.deps.json
 C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Domain\bin\Debug\netcoreapp3.1\Bookshop.Domain.dll
 C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Domain\bin\Debug\netcoreapp3.1\Bookshop.Domain.pdb
-C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Domain\obj\Debug\netcoreapp3.1\Bookshop.Domain.csprojAssemblyReference.cache
 C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Domain\obj\Debug\netcoreapp3.1\Bookshop.Domain.AssemblyInfoInputs.cache
 C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Domain\obj\Debug\netcoreapp3.1\Bookshop.Domain.AssemblyInfo.cs
 C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Domain\obj\Debug\netcoreapp3.1\Bookshop.Domain.dll

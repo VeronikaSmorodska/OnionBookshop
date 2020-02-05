@@ -1,11 +1,11 @@
 C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Service\bin\Debug\netcoreapp3.1\Bookshop.Service.deps.json
 C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Service\bin\Debug\netcoreapp3.1\Bookshop.Service.dll
+C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Service\bin\Debug\netcoreapp3.1\Bookshop.Service.pdb
 C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Service\bin\Debug\netcoreapp3.1\Bookshop.Domain.dll
 C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Service\bin\Debug\netcoreapp3.1\Bookshop.Domain.pdb
 C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Service\obj\Debug\netcoreapp3.1\Bookshop.Service.csprojAssemblyReference.cache
 C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Service\obj\Debug\netcoreapp3.1\Bookshop.Service.AssemblyInfoInputs.cache
 C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Service\obj\Debug\netcoreapp3.1\Bookshop.Service.AssemblyInfo.cs
 C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Service\obj\Debug\netcoreapp3.1\Bookshop.Service.csproj.CopyComplete
-C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Service\bin\Debug\netcoreapp3.1\Bookshop.Service.pdb
 C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Service\obj\Debug\netcoreapp3.1\Bookshop.Service.dll
 C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Service\obj\Debug\netcoreapp3.1\Bookshop.Service.pdb

@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.SpaServices;
+using Microsoft.AspNetCore.SpaServices.AngularCli;
+
 namespace Bookshop.Web
 {
     public class Startup
@@ -29,7 +32,10 @@ namespace Bookshop.Web
                 options.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
                 options.JsonSerializerOptions.MaxDepth = 3;
             });
-            services.AddRazorPages();
+            services.AddSpaStaticFiles(c =>
+            {
+                c.RootPath = "ClientApp/dist";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,16 +54,29 @@ namespace Bookshop.Web
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            //if (!env.IsEnvironment("Debug"))
+            //{
+            app.UseSpaStaticFiles();
+            //}
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseStaticFiles();
+           
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action}/{id?}");
+            });
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "ClientApp";
+
+                if (env.IsEnvironment("Debug"))
+                {
+                    spa.UseAngularCliServer(npmScript: "start");
+                }
             });
         }
     }
