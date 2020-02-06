@@ -6,5 +6,6 @@ namespace Bookshop.Domain.Interfaces.Services
     public interface IBookService
     {
         List<Book> GetAllBooks();
+        void AddNewBook(Book book);
     }
 }

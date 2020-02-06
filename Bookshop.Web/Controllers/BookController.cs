@@ -28,5 +28,22 @@ namespace Bookshop.Web.Controllers
                 return null;
             }
         }
+        [HttpPost]
+        public ActionResult<bool> AddNewBook(Book book)
+        {
+            try
+            {
+                if(ModelState.IsValid)
+                {
+                    _bookService.AddNewBook(book);
+                    return true;
+                }
+                return false;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

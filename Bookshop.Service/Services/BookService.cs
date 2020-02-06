@@ -18,5 +18,9 @@ namespace Bookshop.Service.Services
         {
             return _bookRepository.GetAllBooks();
         }
+        public void AddNewBook(Book book)
+        {
+            _bookRepository.AddNewBook(book);
+        }
     }
 }

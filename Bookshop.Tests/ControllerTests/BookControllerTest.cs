@@ -19,7 +19,7 @@ namespace UnitTestApp.Tests
         private BookController _bookController;
 
         [Fact]
-        public void IndexViewDataMessage()
+        public void GetAllBooksReturnsListOfBooks()
         {
             // Arrange
             var mock = new Mock<IBookService>();
@@ -37,12 +37,41 @@ namespace UnitTestApp.Tests
         {
             var books = new List<Book>()
             {
-                new Book{ BookId=Guid.NewGuid(), Name= "War and Peace" },
+                new Book{ BookId=Guid.NewGuid(), Name= "The Gunslinger" },
                 new Book{ BookId=Guid.NewGuid(), Name= "Roadside Picnic" },
-                new Book{ BookId=Guid.NewGuid(), Name= "Worriors" },
+                new Book{ BookId=Guid.NewGuid(), Name= "Do Android Dream of Electric Ship" },
                 new Book{ BookId=Guid.NewGuid(), Name= "Solaris" }
             };
             return books;
+        }
+        [Fact]
+        public void AddBookReturnsTrueAndInvocatesServiceMethod()
+        {
+            //Arrange
+            var mock = new Mock<IBookService>();
+            _bookController = new BookController(mock.Object);
+            Book newBook = new Book() { BookId = Guid.NewGuid(), Name = "Solaris" };
+            //Act
+            ActionResult<bool> isBookAdded = _bookController.AddNewBook(newBook);
+
+            //Assert
+            Assert.Equal(true, isBookAdded.Value);
+            mock.Verify(s => s.AddNewBook(newBook));
+        }
+        [Fact]
+        public void AddBookReturnsFase()
+        {
+            //Arrange
+            var mock = new Mock<IBookService>();
+            _bookController = new BookController(mock.Object);
+            _bookController.ModelState.AddModelError("Name", "Required");
+            Book newBook = new Book();
+
+            //Act
+            ActionResult<bool> isBookAdded = _bookController.AddNewBook(newBook);
+
+            //Assert
+            Assert.Equal(false, isBookAdded.Value);
         }
     }
 }

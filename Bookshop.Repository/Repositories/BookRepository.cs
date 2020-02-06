@@ -26,5 +26,14 @@ namespace Bookshop.Repository.Repositories
                 return connection.Query<Book>(sql).ToList();
             }
         }
+        public void AddNewBook(Book book)
+        {
+            string sql = $@"INSERT INTO [BookshopOnion].[dbo].[Book]
+                            VALUES(BookId=@BookId, Name=@Name);";
+            using(SqlConnection connection=new SqlConnection(_options.Value.ConnectionStrings.Main))
+            {
+                connection.Execute(sql, book);
+            }
+        }
     }
 }
