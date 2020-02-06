@@ -173,6 +173,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
               "version": "[3.1.1, )"
@@ -238,6 +246,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.Extensions.Options": {
               "target": "Package",
               "version": "[3.1.1, )"
@@ -272,9 +284,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
@@ -330,6 +339,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.AspNetCore.SpaServices": {
               "target": "Package",
               "version": "[3.1.1, )"

@@ -14,13 +14,9 @@ namespace Bookshop.Service.Services
         {
             _bookRepository = bookRepository;
         }
-        public List<Book> GetAllBooks()
+        public List<Domain.Entities.Book> GetAllBooks()
         {
             return _bookRepository.GetAllBooks();
-        }
-        public void AddNewBook(Book book)
-        {
-            _bookRepository.AddNewBook(book);
         }
     }
 }

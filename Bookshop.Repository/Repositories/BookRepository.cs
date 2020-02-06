@@ -29,7 +29,7 @@ namespace Bookshop.Repository.Repositories
         public void AddNewBook(Book book)
         {
             string sql = $@"INSERT INTO [BookshopOnion].[dbo].[Book]
-                            VALUES(BookId=@BookId, Name=@Name);";
+                            VALUES(@BookId, @Name);";
             using(SqlConnection connection=new SqlConnection(_options.Value.ConnectionStrings.Main))
             {
                 connection.Execute(sql, book);

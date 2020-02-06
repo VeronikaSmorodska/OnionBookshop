@@ -1,5 +1,7 @@
 ﻿using Bookshop.Domain.Entities;
 using Bookshop.Domain.Interfaces.Services;
+using Bookshop.Service.Book.AddBook;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,9 +13,12 @@ namespace Bookshop.Web.Controllers
     public class BookController : Controller
     {
         private readonly IBookService _bookService;
-        public BookController(IBookService bookService)
+        private IMediator _mediator;
+
+        public BookController(IBookService bookService, IMediator mediator)
         {
             _bookService = bookService;
+            _mediator = mediator;
         }
         [HttpGet]
         public ActionResult<List<Book>> GetAllBooks()
@@ -29,19 +34,19 @@ namespace Bookshop.Web.Controllers
             }
         }
         [HttpPost]
-        public ActionResult<bool> AddNewBook(Book book)
+        public async System.Threading.Tasks.Task<ActionResult<bool>> AddNewBook(Book book)
         {
             try
             {
                 if(ModelState.IsValid)
                 {
-                    _bookService.AddNewBook(book);
-                    return true;
+                    var vm = await _mediator.Send(new AddBookCommand { Model = book });
+                    return Ok(vm);
                 }
                 return false;
             }
             catch(Exception ex)
-            {
+            { 
                 return false;
             }
         }

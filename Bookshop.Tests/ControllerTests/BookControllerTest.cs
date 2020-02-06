@@ -1,11 +1,8 @@
 ﻿using Bookshop.Domain.Entities;
 using Bookshop.Domain.Interfaces.Services;
-using Bookshop.Domain.Options;
-using Bookshop.Repository.Repositories;
-using Bookshop.Service.Services;
 using Bookshop.Web.Controllers;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
 using Moq;
 using System;
 using System.Collections.Generic;
@@ -22,9 +19,10 @@ namespace UnitTestApp.Tests
         public void GetAllBooksReturnsListOfBooks()
         {
             // Arrange
-            var mock = new Mock<IBookService>();
-            mock.Setup(s => s.GetAllBooks()).Returns(GetTestBooks());
-            _bookController = new BookController(mock.Object);
+            var mockService = new Mock<IBookService>();
+            var mockMerdiatR = new Mock<IMediator>();
+            mockService.Setup(s => s.GetAllBooks()).Returns(GetTestBooks());
+            _bookController = new BookController(mockService.Object, mockMerdiatR.Object);
 
             // Act
             ActionResult<List<Book>> books = _bookController.GetAllBooks();
@@ -45,30 +43,17 @@ namespace UnitTestApp.Tests
             return books;
         }
         [Fact]
-        public void AddBookReturnsTrueAndInvocatesServiceMethod()
+        public async void AddBookReturnsFase()
         {
             //Arrange
-            var mock = new Mock<IBookService>();
-            _bookController = new BookController(mock.Object);
-            Book newBook = new Book() { BookId = Guid.NewGuid(), Name = "Solaris" };
-            //Act
-            ActionResult<bool> isBookAdded = _bookController.AddNewBook(newBook);
-
-            //Assert
-            Assert.Equal(true, isBookAdded.Value);
-            mock.Verify(s => s.AddNewBook(newBook));
-        }
-        [Fact]
-        public void AddBookReturnsFase()
-        {
-            //Arrange
-            var mock = new Mock<IBookService>();
-            _bookController = new BookController(mock.Object);
+            var mockService = new Mock<IBookService>();
+            var mockMerdiatR = new Mock<IMediator>();
+            _bookController = new BookController(mockService.Object, mockMerdiatR.Object);
             _bookController.ModelState.AddModelError("Name", "Required");
             Book newBook = new Book();
 
             //Act
-            ActionResult<bool> isBookAdded = _bookController.AddNewBook(newBook);
+            var isBookAdded = await _bookController.AddNewBook(newBook);
 
             //Assert
             Assert.Equal(false, isBookAdded.Value);

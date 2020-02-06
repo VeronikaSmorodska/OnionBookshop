@@ -15,6 +15,8 @@ C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Web\bin\Debug\netcoreapp
 C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Web\bin\Debug\netcoreapp3.1\Bookshop.Web.dll
 C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Web\bin\Debug\netcoreapp3.1\Bookshop.Web.pdb
 C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Web\bin\Debug\netcoreapp3.1\Dapper.dll
+C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Web\bin\Debug\netcoreapp3.1\MediatR.dll
+C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Web\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.NodeServices.dll
 C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\Anuitex-40\source\repos\OnionBookshop\Bookshop.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.SpaServices.dll
